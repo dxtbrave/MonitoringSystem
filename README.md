@@ -1,7 +1,7 @@
+# 风机监测系统可视化展示
+## 本项目由vuecli3搭建，技术栈包括VUE2+Echarts+axios+Mock.js+ElementUI。
 
-风机监测系统可视化展示，本项目由vuecli3搭建，技术栈包括VUE2+Echarts+axios+Mock.js+ElementUI。
-
-项目内容包括：
+## 项目内容包括：
 
 1.1920*1080内容
 
