@@ -25,3 +25,19 @@ Mock.mock('/api/SlopeRate',{
     'title':'塔筒倾斜度',
     'title_en':'Tower inclination'
 })
+
+Mock.mock('/api/Electricity',{
+    'electricity|10':['@integer(20000,120000)']
+})
+
+Mock.mock('/api/PowerGeneration',()=>{
+    let message = Mock.mock({
+        'list|3': [{
+            'value|20-40': 200,
+        }]
+    })
+    for (let i = 1 ; i <= message.list.length ; i++){
+        message.list[i-1].name = i + '号机'
+    }
+    return message.list
+})

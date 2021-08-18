@@ -51,7 +51,7 @@ export default {
 }
 .tmp-detection .second-col{
   width: 446px;
-  height: 511px;
+  height: 520px;
   margin-top: 15px;
   border: 2px solid #172c67;
 }

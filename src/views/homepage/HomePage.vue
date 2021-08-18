@@ -21,6 +21,8 @@
       </div>
         <!--  塔筒倾斜度 -->
       <slope-rate/>
+        <!-- 风机发电量统计     -->
+      <electricity/>
     </div>
     <!-- 右边图表 -->
     <!-- 影响健康指标分布 -->
@@ -39,6 +41,7 @@ import EquipmentStatus from "@/components/common/equipmentstatus/EquipmentStatus
 import EarthQuake from "@/components/common/earthquake/EarthQuake";
 import TmpDetection from "@/components/common/tmpdetection/TmpDetection";
 import SlopeRate from "@/components/common/sloperate/SlopeRate";
+import Electricity from "@/components/common/electricity/Electricity";
 
 
 export default {
@@ -53,6 +56,7 @@ export default {
     EarthQuake,
     TmpDetection,
     SlopeRate,
+    Electricity,
   },
 };
 </script>
@@ -72,9 +76,7 @@ export default {
 
 .center-body {
   width: 900px;
-  /*background-color: white;*/
   position: absolute;
-  /* display: flex; */
   top: 100px;
   left: 505px;
   right: 505px;

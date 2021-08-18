@@ -22,7 +22,6 @@ export default {
     // 需要先请求数据，然后经过短暂的延时之后再进行
     let slope = this._getSlopeRate()
     setTimeout(()=>{
-      console.log(slope)
       this.loading = false
       this.option = {
         tooltip: {
@@ -119,9 +118,8 @@ export default {
               focus: 'series'
             },
             data:slope,
-            itemStyle:{
-              normal: SlopeColor[0]
-            },
+            itemStyle: SlopeColor[0]
+            ,
           },
         ]
       };
