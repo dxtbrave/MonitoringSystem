@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {BarStyleArray} from "@/components/content/statusecharts/data";
+import {BarStyleArray} from "@/common/olorItem";
 import {getEquipmentStatus} from "@/network/EquipmentStatus";
 
 export default {

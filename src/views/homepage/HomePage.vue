@@ -19,6 +19,8 @@
         <!-- 负载展示 -->
         <machinery-load/>
       </div>
+        <!--  塔筒倾斜度 -->
+      <slope-rate/>
     </div>
     <!-- 右边图表 -->
     <!-- 影响健康指标分布 -->
@@ -34,8 +36,9 @@ import TodayGeneration from "@/components/common/powerheader/todaygeneration/Tod
 import MachineryLoad from "@/components/common/powerheader/machineryload/MachineryLoad";
 import AffectHealth from "@/components/common/affecthealth/AffectHealth";
 import EquipmentStatus from "@/components/common/equipmentstatus/EquipmentStatus";
-import TmpDetection from "@/components/common/tmpdetection/TmpDetection";
 import EarthQuake from "@/components/common/earthquake/EarthQuake";
+import TmpDetection from "@/components/common/tmpdetection/TmpDetection";
+import SlopeRate from "@/components/common/sloperate/SlopeRate";
 
 
 export default {
@@ -47,8 +50,9 @@ export default {
     MachineryLoad,
     AffectHealth,
     EquipmentStatus,
+    EarthQuake,
     TmpDetection,
-    EarthQuake
+    SlopeRate,
   },
 };
 </script>

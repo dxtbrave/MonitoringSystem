@@ -8,7 +8,7 @@
 
 <script>
 import {getTmpHum} from "@/network/EquipmentStatus";
-import {BarStyleArray} from "@/components/content/statusecharts/data";
+import {BarStyleArray} from "@/common/olorItem";
 export default {
   name: "TemperatureEcharts",
   data() {

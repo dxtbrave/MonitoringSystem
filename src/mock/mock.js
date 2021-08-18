@@ -19,3 +19,9 @@ Mock.mock('/api/TemperatureStatus',{
     'tmp|10':['@integer(10,100)'],
     'humidity|10':['@integer(10,100)']
 })
+
+Mock.mock('/api/SlopeRate',{
+    'slope|25':['@integer(5,40)'],
+    'title':'塔筒倾斜度',
+    'title_en':'Tower inclination'
+})

@@ -6,7 +6,7 @@
 
 <script>
 import * as echarts from "echarts";
-import {dateNum} from "./data.js"
+import {dateNum} from "@/common/olorItem";
 
 export default {
   name: "AffectHealth",
