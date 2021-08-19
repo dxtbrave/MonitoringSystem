@@ -1,5 +1,5 @@
 import * as echarts from "echarts"
-
+import {colorArr,colorAlpha} from "@/common/common";
 export const SlopeColor = [
     {
         normal:{
@@ -54,80 +54,60 @@ export const BarStyleArray = [
 ]
 
 
-const ItemStyleArray = [
+export const ItemStyleArray = [
     {
-        normal: {
-            color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、上、右、下
-                offset: 0,
-                color: '#29c1ff'
-            }, {
-                offset: 1,
-                color: '#8B008B'
-            }])
-        }
+        borderColor: colorArr[0],
+        borderWidth:2,
+        shadowBlur: 20,
+        shadowColor: "#41a8f8",
+        shadowOffsetx: 25,
+        shadowOffsety: 20,
+        color:colorAlpha[0]
     },
     {
-        normal: {
-            color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、上、右、下
-                offset: 0,
-                color: '#29c1ff'
-            }, {
-                offset: 1,
-                color: '#BA55D3'
-            }])
-        }
+        borderColor: colorArr[1],
+        borderWidth: 2,
+        shadowBlur: 20,
+        shadowColor: colorArr[1],
+        shadowOffsetx: 25,
+        shadowOffsety: 20,
+        color: colorAlpha[1]
     },
     {
-        normal: {
-            color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、上、右、下
-                offset: 0,
-                color: '#29c1ff'
-            }, {
-                offset: 1,
-                color: '#9400D3'
-            }])
-        }
+        borderColor: colorArr[2],
+        borderWidth: 2,
+        shadowBlur: 20,
+        shadowColor: colorArr[2],
+        shadowOffsetx: 25,
+        shadowOffsety: 20,
+        color: colorAlpha[2]
     },
     {
-        normal: {
-            color: new echarts.graphic.LinearGradient(1, 0, 0, 1, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、上、右、下
-                offset: 0,
-                color: '#29c1ff'
-            }, {
-                offset: 1,
-                color: '#8B008B'
-            }])
-        }
+        borderColor: colorArr[3],
+        borderWidth: 2,
+        shadowBlur: 20,
+        shadowColor: colorArr[3],
+        shadowOffsetx: 25,
+        shadowOffsety: 20,
+        color: colorAlpha[2]
     },
     {
-        normal: {
-            color: new echarts.graphic.LinearGradient(1, 0, 0, 1, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、上、右、下
-                offset: 0,
-                color: '#29c1ff'
-            }, {
-                offset: 1,
-                color: '#4169E1'
-            }])
-        }
+        borderColor: colorArr[4],
+        borderWidth: 2,
+        shadowBlur: 20,
+        shadowColor: colorArr[4],
+        shadowOffsetx: 25,
+        shadowOffsety: 20,
+        color: colorAlpha[4]
     },
     {
-        normal: {
-            color: new echarts.graphic.LinearGradient(1, 1, 0, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、上、右、下
-                offset: 0,
-                color: '#29c1ff'
-            }, {
-                offset: 1,
-                color: '#87CEFA'
-            }])
-        }
+        borderColor: colorArr[5],
+        borderWidth: 2,
+        shadowBlur: 20,
+        shadowColor: colorArr[5],
+        shadowOffsetx: 25,
+        shadowOffsety: 20,
+        color: colorAlpha[5]
     },
 ]
 
-export const dateNum = [
-    { value: 16.2, name: "电压", itemStyle: ItemStyleArray[0] },
-    { value: 14.6, name: "扇叶", itemStyle: ItemStyleArray[1] },
-    { value: 12.7, name: "基础混凝土", itemStyle: ItemStyleArray[2] },
-    { value: 10.4, name: "寿命", itemStyle: ItemStyleArray[3] },
-    { value: 9.5, name: "风力", itemStyle: ItemStyleArray[4] },
-    { value: 8.5, name: "温度", itemStyle: ItemStyleArray[5] },
-]

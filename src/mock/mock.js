@@ -1,15 +1,7 @@
 import Mock from "mockjs"
-// 使用mockjs模拟数据
-// Mock.mock('/api/EquipmentStatus',(req,res)=>{
-//     return Mock.mock({
-//         'list|2':[{
-//             '"number1"|1-100':1,
-//             '"number2"|1-100':1,
-//             '"number3"|1-100':1,
-//             '"number4"|1-100':1,
-//         }]
-//     })
-// })
+import {ItemStyleArray} from "@/common/olorItem";
+
+
 Mock.mock('/api/EquipmentStatus',{
     'life|4':['@integer(10,100)'],
     'ele|4':['@integer(10,100)']
@@ -40,4 +32,30 @@ Mock.mock('/api/PowerGeneration',()=>{
         message.list[i-1].name = i + '号机'
     }
     return message.list
+})
+
+Mock.mock('/api/ToadyGeneration',{
+    'generation|62425-106320':50000
+})
+
+Mock.mock('/api/MachineryLoad',{
+    'list|1':[{
+        'num1|30-97': 30,
+        'num2|30-97': 30,
+        'num3|30-97': 30,
+    }]
+})
+
+Mock.mock('/api/AffectHealth',()=>{
+    const  nameList = ['电压','扇叶','基础混凝土','寿命','风力','温度']
+    let dateNum = Mock.mock({
+        'list|6':[{
+            'value':'@float(8,21,1,1)'
+        }]
+    })
+    for (let i = 0 ; i<dateNum.list.length; i++){
+        dateNum.list[i].name = nameList[i]
+        dateNum.list[i].itemStyle = ItemStyleArray[i]
+    }
+    return dateNum
 })

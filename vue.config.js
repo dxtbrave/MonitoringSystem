@@ -4,10 +4,10 @@ module.exports ={
             // 设置别名
             alias:{
                 'assets':'@/assets',
-                // 'common':'@/common',
-                // 'components':'@/components',
-                // 'network':'@/network',
-                // 'views':'@/views',
+                'common':'@/common',
+                'components':'@/components',
+                'network':'@/network',
+                'views':'@/views',
             }
         }
     },
@@ -15,7 +15,7 @@ module.exports ={
     config
       .plugin('html')
       .tap(args => {
-        args[0].title= '风机组监控'
+        args[0].title= 'W-301风机组监控'
         return args
       })
   }

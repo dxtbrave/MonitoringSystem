@@ -37,15 +37,15 @@
 </template>
 
 <script>
-
-import {getTodayGeneration} from "@/components/common/powerheader/todaygeneration/data";
+// 获取axios方法
+import {getToadyGeneration} from "@/network/TodayGeneration";
 
 export default {
   name: "TodayGeneration",
   data() {
     return {
       title: '当日发电量',
-      count:62425,
+      count:0,
       PlanCount:106320,
       countNum:{
         "ge":0,
@@ -64,20 +64,23 @@ export default {
     }
   },
   mounted() {
-    this.getcountNum()
+      this._getTodayGeneration()
   },
   methods:{
-    getcountNum(){
-      this.count = getTodayGeneration()
-      let num = this.count
-      this.countNum.ge = parseInt(num % 10)
-      this.countNum.shi = parseInt(num / 10 % 10)
-      this.countNum.bai = parseInt(num / 100 % 10)
-      this.countNum.qian = parseInt(num / 1000 % 10)
-      this.countNum.wan = parseInt(num / 10000 % 10)
-      this.countNum.shiwan = parseInt(num / 100000)
+    _getTodayGeneration(){
+      getToadyGeneration().then(res=>{
+        this.count = res.generation
+        let num = this.count
+        this.countNum.ge = parseInt(num % 10)
+        this.countNum.shi = parseInt(num / 10 % 10)
+        this.countNum.bai = parseInt(num / 100 % 10)
+        this.countNum.qian = parseInt(num / 1000 % 10)
+        this.countNum.wan = parseInt(num / 10000 % 10)
+        this.countNum.shiwan = parseInt(num / 100000)
+      })
     }
-  }
+  },
+
 }
 </script>
 

@@ -25,7 +25,7 @@
 
 <script>
 import Disc from "@/components/common/disc/Disc";
-import {getFuZai} from "@/components/common/powerheader/machineryload/data";
+import {getMachineryLoad} from "@/network/MachineryLoad";
 
 export default {
   name: "MachineryLoad",
@@ -38,7 +38,14 @@ export default {
     Disc,
   },
   created() {
-   this.FuZai = getFuZai()
+    this._getMachineryLoad()
+  },
+  methods:{
+    _getMachineryLoad(){
+      getMachineryLoad().then(res=>{
+        this.FuZai = res.list
+      })
+    }
   }
 }
 </script>

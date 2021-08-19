@@ -1,6 +1,9 @@
 <template>
   <div class="power-generation">
-    <div class="echarts" ref="echarts"></div>
+    <div class="echarts" ref="echarts"
+         v-loading="loading"
+         element-loading-background="rgba(0, 0, 0, 0)"
+         element-loading-text="拼命加载中..."></div>
   </div>
 </template>
 
@@ -8,16 +11,13 @@
 import * as echarts from "echarts";
 import {getPowerGeneration} from "@/network/PowerGeneration";
 
-import {
-  trafficWay,
-  color,
-  img,
-} from "@/components/common/powergeneration/data";
+import {PowerGenerationColor, PowerGenerationImg, PowerGenerationimg} from "@/common/common";
 export default {
   name: "PowerGeneration",
   data() {
     return {
       message: [],
+      loading:true,
       seriesOption: [],
       option: {},
     };
@@ -28,40 +28,6 @@ export default {
   mounted() {
     const value = this._getPowerGeneration()
     setTimeout(()=>{
-      console.log(value)
-      // for (let i = 0; i < trafficWay.length; i++) {
-      //   this.message.push(
-      //       {
-      //         value: trafficWay[i].value,
-      //         name: trafficWay[i].name,
-      //         itemStyle: {
-      //           normal: {
-      //             borderWidth: 6,
-      //             shadowBlur: 20,
-      //             borderColor: color[i],
-      //             shadowColor: color[i],
-      //           },
-      //         },
-      //       },
-      //       {
-      //         value: 2,
-      //         name: "",
-      //         itemStyle: {
-      //           normal: {
-      //             label: {
-      //               show: false,
-      //             },
-      //             labelLine: {
-      //               show: false,
-      //             },
-      //             color: "rgba(0, 0, 0, 0)",
-      //             borderColor: "rgba(0, 0, 0, 0)",
-      //             borderWidth: 0,
-      //           },
-      //         },
-      //       }
-      //   );
-      // }
       for (let i = 0; i < value.length; i++) {
         this.message.push(
             {
@@ -71,8 +37,8 @@ export default {
                 normal: {
                   borderWidth: 6,
                   shadowBlur: 20,
-                  borderColor: color[i],
-                  shadowColor: color[i],
+                  borderColor: PowerGenerationColor[i],
+                  shadowColor: PowerGenerationColor[i],
                 },
               },
             },
@@ -112,8 +78,8 @@ export default {
                 formatter: function (params) {
                   let percent = 0;
                   let total = 0;
-                  for (let i = 0; i < trafficWay.length; i++) {
-                    total += trafficWay[i].value;
+                  for (let i = 0; i < value.length; i++) {
+                    total += value[i].value;
                   }
                   percent = ((params.value / total) * 100).toFixed(0);
                   if (params.name !== "") {
@@ -135,14 +101,14 @@ export default {
         },
       ];
       this.option = {
-        color: color,
+        color: PowerGenerationColor,
         graphic: {
           elements: [
             {
               type: "image",
               z: 3,
               style: {
-                image: img,
+                image: PowerGenerationImg,
                 width: 178,
                 height: 178,
               },
@@ -164,6 +130,7 @@ export default {
       const chartDom = this.$refs.echarts;
       const myChart = echarts.init(chartDom);
       myChart.setOption(this.option);
+      this.loading = false
     },500)
 
 
